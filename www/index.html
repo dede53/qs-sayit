@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SayIt</title>
+	<script src='/socket.io/socket.io.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js"></script>
+	<script src="//colthreepv.github.io/angular-media-player/dist/angular-media-player.min.js" type="text/javascript"></script>
+	<script src="http://code.angularjs.org/1.2.0rc1/angular-route.min.js"></script>
+	<script src='controller.js'></script>
+</head>
+<body ng-app="sayIt" ng-controller="appController">
+	<div ng-view role="main" style="margin-top:82px; padding:20px;">
+		<audio media-player="audio1" data-playlist="playlist1">
+			<source src="http://upload.wikimedia.org/wikipedia/en/d/d0/Rick_Astley_-_Never_Gonna_Give_You_Up.ogg" type="audio/ogg">
+		</audio>
+		{{status}}{{playlist1 | json}}
+		<button ng-click="play()">Play</button>
+		<button ng-click="add()">Add</button>
+		<button ng-click="pause()">Pause</button>
+	</div>
+</body>
+</html>
